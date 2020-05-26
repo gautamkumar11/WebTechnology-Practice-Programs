@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+        <ol>
+            <li>MAngo</li>
+            <li id="title">Banana</li>
+            <li>Orange</li>
+        </ol>
+        <p class="container">Dinga</p>
+         <h2 id="myid">Welcome</h2>
+         <form action="Assignment2.html" onsubmit="return valid()">
+             username = <input type="text" placeholder = "enter your name" id="un"></br>
+             password = <input type="password" placeholder = "enter your password" id="ps"></br>
+             <input type="submit">
+         </form>
+
+    </body>
+    
+    <script>
+        let list = document.getElementById("title");
+        console.log(list);
+
+        let a= document.getElementById("myid");
+        a.textContent = "my class";
+        a.textContent = "<q>hellooo</q>"
+        a.innerHTML = "<p>hello gautam kumar</p>"
+
+        function valid(){
+            var user = document.getElementById("un");
+            var pass = document.getElementById("ps");
+            if(user.value.trim()=="" || pass.value.trim()==""){
+                alert("username and password should not be empty");
+                return false;
+            }
+            else{
+                alert("username accepted");
+                return true;
+            }
+            var val = document.getElementById("un").value;
+            var reg= /^[A-Z a-z]+$/;
+            var res= reg.test(val);
+            if(res)
+                {
+                    alert("username accepted");
+                return true;
+                }
+                else
+                {
+                    alert("username should contains with letter");
+                return false;
+                }
+        }
+    </script>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body style="background-color: #FFE4B5;">
+        <h1>collection in javascript</h1>
+        <h1> Notes:</h1>
+        <pre style="font-size: 25px; background-color: antiquewhite;">
+            values() - It is used to fetch the values from the map.</br>
+            key()    - It is used to fetch the keys from the map.</br>
+            entries() - It is used to fetch both the keys and the values from the map.</br>
+            clear() - It is used to clear all the data from the map.</p></br>
+
+        </pre>
+        <pre style="font-size: 25px; background-color: antiquewhite;">
+            for of loop:
+            syntax:
+            for(variablename of iterable.object)
+            {
+                //body
+            }
+        </pre>
+        <pre style="font-size: 25px; background-color: antiquewhite;">
+          <h1> Set() in js collection:</h1>
+          Syntax of set method:
+
+          var variablename - now set([value1, value2,....valuen])
+            methods of set():
+
+            1)add(arg1) - It will take one argument and the argument is value.
+                It is used to add new element in the existing set object.
+
+            2)delete(arg1) - It will take one argument and the argument will be value.
+                If the data will be present inside set object after deleting the
+                data it will return true as output.
+                but if the data will not be present it will return false as output.
+
+            3)size - It is used to find the current size of Set.
+           
+            4)has(arg1) - It accepts one argument and the argument is the value.
+                If the value will be present inside Set object it will return true as output.
+                If the value will not be present it will return false as output.
+            
+            5)values() - It is used to fetch the values from the Set object.
+
+
+            6)entries() - It is used to fetch the key and value both from set Object.
+                but inside the set we are not using key.
+                so which data we are going to give as value the same data will be 
+                considered as key.
+                so output will be repeated.
+
+            7)clear() - It is used to clear the Set.
+
+        </pre>
+        <h1>Outputs:</h1>
+        <h2>Set() in js collection:</h2>
+          <script>
+                var students = new Set(["gautam",21, 90, "IT"]);
+                document.write(`${students}</br>`);
+                document.write(`${students.size}</br>`);
+                document.write(`${students.has(90)}</br>`);
+                document.write(`${students.has("adress")}</br>`);
+
+                //add() method
+                document.write("----add() method----</br>");
+                students.add(2019);
+                document.write(`${students.size}</br>`);
+                students.add(2,"banglore");
+                document.write(`${students.size}</br>`);
+                document.write(`${students.has(2)}</br>`);
+                document.write(`${students.has("banglore")}</br>`);
+                students.add("Bihar");
+                document.write(`${students.size}</br>`);
+                document.write(`${students.has("Bihar")}</br>`);
+                students.add("Bihar");
+                document.write(`${students.size}</br>`);
+                document.write(`${students.has("Bihar")}</br>`);
+
+                //delete() method
+                document.write("---delete() method---</br>");
+                    students.delete("Bihar");
+                    document.write(`${students.size}</br>`);
+                    document.write(`${students.has("Bihar")}</br>`);
+                    document.write(`${students.delete(2)}</br>`);
+          
+                //values() method
+                document.write("-----values() method----</br>");
+                var p = students.values();
+                document.write(`${p.next().value}</br>`);
+                document.write(`${p.next().value}</br>`);
+                document.write(`${p.next().value}</br>`);
+                document.write(`${p.next().value}</br>`);
+
+                document.write("--Print all the value using for of loop--</br>");
+                var d;
+                for(d of students.values()){
+                    document.write(`${d}</br>`);
+                }
+               
+               //entries( ) method
+               document.write("-----entries() method----</br>");
+               var r= students.entries();
+               document.write(`${r.next().value}</br>`);
+                document.write(`${r.next().value}</br>`);
+                document.write(`${r.next().value}</br>`);
+                document.write(`${r.next().value}</br>`);
+
+                document.write("--Print all the value using for of loop--</br>");
+                var g;
+                for(g of students.entries()){
+                    document.write(`${g}</br>`);
+                }
+
+                //clear() method
+                document.write("-----clear() method----</br>");
+                students.clear();
+                document.write(`${students.size}</br>`);
+          </script>
+
+
+        <h2>Map() in js collection:</h2>
+        <script>
+            let student = new Map([["name","gautam"],["adress","nagpur"],["marks","90%"]]);
+            document.write(`${student}</br>`);
+            document.write(`${student.size}</br>`);
+  
+            //get method()
+  
+            document.write(`${student.get("name")}</br>`);
+            document.write(`${student.get("marks")}</br>`);
+  
+            //set method()
+  
+            student.set("name","krishna");
+            student.set("marks","70%");
+            document.write(`${student.get("name")}</br>`);
+            document.write(`${student.get("marks")}</br>`);
+  
+            //delete method()
+  
+            document.write(`${student.delete("marks")}</br>`);
+            document.write(`${student.get("marks")}</br>`);
+  
+            //has method()
+  
+            document.write(`${student.has("name")}</br>`);
+            document.write(`${student.has("marks")}</br></br>`);
+
+            //value method()
+
+            var a= student.values();
+            document.write(`${a.next().value}</br>`);
+            document.write(`${a.next().value}</br>`);
+
+            // key method
+            var q= student.keys();
+            document.write(`${q.next().value}</br>`);
+            document.write(`${q.next().value}</br>`);
+            document.write(`${q.next().value}</br>`);
+
+            //enteries()
+            var s= student.entries();
+            document.write(`${s.next().value}</br>`);
+        
+            
+            //clear() method
+             student.clear();
+             document.write(`${student.size}</br>`);
+             
+  
+          </script>
+          <script>
+              var emp= new Map();
+              document.write("size of employees is  "+`${emp.size}</br>`);
+              emp.set("name","gautam");
+              emp.set("age","21");
+              emp.set("marks","89%");
+              emp.set("adress","nagpur");
+              document.write(`${emp.size}</br>`);
+             document.write("---------printing keys value here------</br>");
+             var tem;
+             for(temp of emp.keys()){
+                document.write(`${temp}</br>`);
+             }
+             document.write("---------printing values value here------</br>");
+             for(temp of emp.values()){
+                document.write(`${temp}</br>`);
+             }
+             document.write("---------printing keys and values value here------</br>");
+             for(temp of emp.entries()){
+                document.write(`${temp}</br>`);
+             }
+
+          </script>
+
+    </body>
+</html>

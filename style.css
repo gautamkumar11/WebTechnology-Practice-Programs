@@ -1,0 +1,11 @@
+h1{
+	
+	color : green;
+}
+ body{
+				background-color: yellow;
+				background-image: url(images/image3.jpg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+			} 
